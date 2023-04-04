@@ -5,7 +5,8 @@
     <classes>
       <class name="Proj.Class1">
         <methods>
-          <include name="Pack"/>
+          <include name="openURL"/>
+          <include name="Login"/>
         </methods>
       </class> <!-- Proj.Class1 -->
     </classes>
