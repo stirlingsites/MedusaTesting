@@ -5,12 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
-public class Packing {
+public class packingSalesOrder {
         public static WebDriver driver;
         @Test
-        void Packing() throws InterruptedException {
+        void packSalesOrder() throws InterruptedException {
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\14252\\Downloads\\chromedriver_win32\\chromedriver.exe");
             driver = new ChromeDriver();
             driver.get("http://127.0.0.1:8000/login?next=/");
@@ -27,7 +25,6 @@ public class Packing {
             Thread.sleep(2000);
             driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[4]/div/div/div[3]/div[1]/div/button/div/span")).click();
             Thread.sleep(2000);
-
             driver.close();
         }
 }

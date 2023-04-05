@@ -2,6 +2,29 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/14252/MedusaProjectTest/src/test/java/Proj">
-        <classes/>
+        <classes>
+            <class name="Proj.login">
+                <methods>
+                    <include name="openURL"/>
+                    <include name="correctLogin"/>
+                    <include name="invalidLogin"/>
+                </methods>
+            </class>
+            <class name="Proj.packingSalesOrder">
+                <methods>
+                    <include name="packSalesOrder"/>
+                </methods>
+            </class>
+            <class name="Proj.packingScrap">
+                <methods>
+                    <include name="packScrap"/>
+                </methods>
+            </class>
+            <class name="Proj.packingStockOrder">
+                <methods>
+                    <include name="packStockOrder"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
