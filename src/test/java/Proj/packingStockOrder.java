@@ -20,10 +20,8 @@ public class packingStockOrder {
         driver.findElement(By.id("Stock Order")).click();
         Thread.sleep(2000);
         driver.findElement(By.name("logon")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[1]/td[1]")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[4]/div/div/div[3]/div[1]/div/button/div")).click();
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("//*[@id=\"dataGridContainerDown\"]/div/div[4]/div/div/div[3]/div[1]/div/button/div/span")).submit();
         Thread.sleep(2000);
         driver.close();
     }

@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 public class packingScrap {
     public static WebDriver driver;
     @Test
+
     void packScrap() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\14252\\Downloads\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();

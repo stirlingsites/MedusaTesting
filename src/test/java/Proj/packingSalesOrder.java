@@ -2,6 +2,7 @@ package Proj;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -20,10 +21,18 @@ public class packingSalesOrder {
             driver.findElement(By.id("Sales Order")).click();
             Thread.sleep(2000);
             driver.findElement(By.xpath("/html/body/main/div[2]/div/form/input[2]")).click();
+            Thread.sleep(4000);
+            driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[9]/td[4]")).click();
+            //driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[9]")).click();
+            Thread.sleep(4000);
+            WebElement quantity = driver.findElement(By.xpath("//*[@id=\"dataGridContainerDown\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[1]/td[6]"));
+            quantity.click();
             Thread.sleep(2000);
-            driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[1]/td[1]")).click();
+            driver.findElement(By.xpath("//*[@id=\"dataGridContainerDown\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[1]/td[6]/div[1]/div/div[1]/input")).sendKeys("1");
+            Thread.sleep(4000);
+            driver.findElement(By.xpath("//*[@id=\"h3line\"]")).click();
             Thread.sleep(2000);
-            driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[4]/div/div/div[3]/div[1]/div/button/div/span")).click();
+            driver.findElement(By.xpath("//*[@id=\"dataGridContainerDown\"]/div/div[4]/div/div/div[3]/div[1]/div/button/div")).click();
             Thread.sleep(2000);
             driver.close();
         }

@@ -25,16 +25,84 @@ td,th {border:1px solid #009;padding:.25em .5em}
 <body>
 <table cellspacing="0" cellpadding="0" class="testOverview">
 <tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em"><a href="#t1">MedusaProjectTest</a></td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi">0</td><td class="numi">19.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">C:/Users/14252/MedusaProjectTest/src/test/java/Proj</a></td><td class="numi">5</td><td class="numi">5</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">75.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr id="t1"><th colspan="5">MedusaProjectTest &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="2">Proj.Class1</td><td><a href="#m1"><b>Login</b>  </a></td><td class="numi">1</td><td>1680641554417</td><td class="numi">17180</td></tr><tr class="passedodd"><td><a href="#m2"><b>openURL</b>  </a></td><td class="numi">1</td><td>1680641571600</td><td class="numi">2345</td></tr>
+<tr id="t1"><th colspan="5">C:/Users/14252/MedusaProjectTest/src/test/java/Proj &#8212; failed</th></tr>
+<tr class="failedodd"><td>Proj.packingStockOrder</td><td><a href="#m1"><b>packStockOrder</b>  </a></td><td class="numi">1</td><td>1680899974148</td><td class="numi">8498</td></tr>
+<tr><th colspan="5">C:/Users/14252/MedusaProjectTest/src/test/java/Proj &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="2">Proj.login</td><td><a href="#m2"><b>invalidLogin</b>  </a></td><td class="numi">1</td><td>1680899922921</td><td class="numi">10315</td></tr><tr class="passedodd"><td><a href="#m3"><b>correctLogin</b>  </a></td><td class="numi">1</td><td>1680899913607</td><td class="numi">9311</td></tr>
+<tr class="passedeven"><td>Proj.packingSalesOrder</td><td><a href="#m4"><b>packSalesOrder</b>  </a></td><td class="numi">1</td><td>1680899933242</td><td class="numi">27113</td></tr>
+<tr class="passedodd"><td>Proj.login</td><td><a href="#m5"><b>openURL</b>  </a></td><td class="numi">1</td><td>1680899907762</td><td class="numi">5842</td></tr>
+<tr class="passedeven"><td>Proj.packingScrap</td><td><a href="#m6"><b>packScrap</b>  </a></td><td class="numi">1</td><td>1680899960355</td><td class="numi">13791</td></tr>
 </table>
-<h1>MedusaProjectTest</h1>
-<h2 id="m1">Proj.Class1:Login</h2>
+<h1>C:/Users/14252/MedusaProjectTest/src/test/java/Proj</h1>
+<h2 id="m1">Proj.packingStockOrder:packStockOrder</h2>
+<div>
+<div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;dataGridContainerUp&quot;]/div/div[4]/div/div/div[3]/div[1]/div/button/div&quot;}
+  (Session info: chrome=111.0.5563.147)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [42dc6c8439bd846b9c1b5fcd319ea637, findElement {using=xpath, value=//*[@id=&quot;dataGridContainerUp&quot;]/div/div[4]/div/div/div[3]/div[1]/div/button/div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: C:\Users\14252\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53893}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53893/devtoo..., se:cdpVersion: 111.0.5563.147, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 42dc6c8439bd846b9c1b5fcd319ea637
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at Proj.packingStockOrder.packStockOrder(packingStockOrder.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</div>
+</div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">Proj.Class1:openURL</h2>
+<h2 id="m2">Proj.login:invalidLogin</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">Proj.login:correctLogin</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">Proj.packingSalesOrder:packSalesOrder</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">Proj.login:openURL</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">Proj.packingScrap:packScrap</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
