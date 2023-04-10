@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/14252/MedusaProjectTest/src/test/java/Proj">
+    <test verbose="2" preserve-order="true" name="C:/Users/14252/MedusaProjectTest/src/test">
         <classes>
+            <class name="Proj.Customer">
+                <methods>
+                    <include name="addIncompleteCustomer"/>
+                    <include name="addCompleteCustomer"/>
+                    <include name="editCompleteCustomer"/>
+                    <include name="editIncompleteCustomer"/>
+                </methods>
+            </class>
+            <class name="Proj.Salesorder">
+                <methods>
+                    <include name="addIncompleteSalesorder"/>
+                    <include name="addCompleteSalesorder"/>
+                    <include name="editCompleteSalesorder"/>
+                    <include name="editIncompleteSalesorder"/>
+                </methods>
+            </class>
             <class name="Proj.login">
                 <methods>
                     <include name="openURL"/>
-                    <include name="correctLogin"/>
                     <include name="invalidLogin"/>
+                    <include name="correctLogin"/>
                 </methods>
             </class>
             <class name="Proj.packingSalesOrder">
