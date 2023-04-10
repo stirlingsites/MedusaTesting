@@ -33,14 +33,15 @@ public class Salesorder {
     @Test
     void addIncompleteSalesorder() throws InterruptedException {
         driver.get("http://127.0.0.1:8000/grid/salesorder");
+        Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div/div")).sendKeys(Keys.ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"dataGridContainer\"]/div/div[4]/div/div/div[3]/div[2]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         // Try saving the form without filling in any fields
         driver.findElement(By.name("save")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         Assert.assertEquals(driver.getCurrentUrl(), "http://127.0.0.1:8000/view/salesorder");
     }
@@ -48,10 +49,11 @@ public class Salesorder {
     @Test
     void addCompleteSalesorder() throws InterruptedException {
         driver.get("http://127.0.0.1:8000/grid/salesorder");
+        Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div/div")).sendKeys(Keys.ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"dataGridContainer\"]/div/div[4]/div/div/div[3]/div[2]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         // Fill in the required fields
         driver.findElement(By.name("number")).sendKeys("S10200006");
@@ -74,21 +76,29 @@ public class Salesorder {
         Thread.sleep(2000);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,-2500)");
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
         driver.findElement(By.name("save")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+
         Assert.assertEquals(driver.getCurrentUrl(), "http://127.0.0.1:8000/grid/salesorder");
     }
 
     @Test
     void editCompleteSalesorder() throws InterruptedException {
         driver.get("http://127.0.0.1:8000/grid/salesorder");
+        Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div/div")).sendKeys(Keys.ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+        // Unselect the filter if it is selected
+        if (driver.findElements(By.xpath("//*[@id=\"dataGridContainer\"]/div/div[6]/div/div/div[1]/div/table/tbody" +
+                "/tr[1]/td[2]/a[3]")).isEmpty()) {
+            driver.findElement(By.xpath("//*[@id=\"dataGridContainer\"]/div/div[10]/div[1]/div[1]")).click();
+            Thread.sleep(2000);
+        }
         driver.findElement(By.xpath("//*[@id=\"dataGridContainer\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[1" +
                 "]/td[2]/a[3]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         String expectedNumber = "S10200010";
         // Edit a few fields
@@ -101,31 +111,45 @@ public class Salesorder {
         shipDropdown.selectByIndex(1);
         Select billDropdown = new Select(driver.findElement(By.name("billTo")));
         billDropdown.selectByIndex(1);
-        Thread.sleep(3000);
+        Thread.sleep(2000);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
 
         driver.findElement(By.name("save")).click();
+        Thread.sleep(2000);
         driver.navigate().refresh();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
+
         Assert.assertEquals(driver.findElement(By.name("number")).getAttribute("value"), expectedNumber);
     }
 
     @Test
     void editIncompleteSalesorder() throws InterruptedException {
         driver.get("http://127.0.0.1:8000/grid/salesorder");
+        Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div/div")).sendKeys(Keys.ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+        // Unselect the filter if it is selected
+        if (driver.findElements(By.xpath("//*[@id=\"dataGridContainer\"]/div/div[6]/div/div/div[1]/div/table/tbody" +
+                "/tr[1]/td[2]/a[3]")).isEmpty()) {
+            driver.findElement(By.xpath("//*[@id=\"dataGridContainer\"]/div/div[10]/div[1]/div[1]")).click();
+            Thread.sleep(2000);
+        }
         driver.findElement(By.xpath("//*[@id=\"dataGridContainer\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[1" +
                 "]/td[2]/a[3]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         String expectedNumber = driver.findElement(By.name("number")).getAttribute("value");
         // Empty a required field
         driver.findElement(By.name("number")).clear();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
         driver.findElement(By.name("save")).click();
+        Thread.sleep(2000);
         driver.navigate().refresh();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
+
         Assert.assertEquals(driver.findElement(By.name("number")).getAttribute("value"), expectedNumber);
     }
 }
