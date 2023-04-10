@@ -2,6 +2,7 @@ package Proj;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,9 +36,14 @@ public class packingSalesOrder {
             Thread.sleep(2000);
             driver.findElement(By.xpath("/html/body/main/div[2]/div/form/input[2]")).click();
             Thread.sleep(4000);
+            JavascriptExecutor jse = (JavascriptExecutor)driver;
+            jse.executeScript("window.scrollBy(0, 600)");
+            Thread.sleep(2000);
             driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[9]/td[4]")).click();
             //driver.findElement(By.xpath("//*[@id=\"dataGridContainerUp\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[9]")).click();
             Thread.sleep(4000);
+            jse.executeScript("window.scrollBy(0, 300)");
+            Thread.sleep(2000);
             WebElement quantity = driver.findElement(By.xpath("//*[@id=\"dataGridContainerDown\"]/div/div[6]/div/div/div[1]/div/table/tbody/tr[1]/td[6]"));
             quantity.click();
             Thread.sleep(2000);
@@ -47,7 +53,6 @@ public class packingSalesOrder {
             Thread.sleep(2000);
             driver.findElement(By.xpath("//*[@id=\"dataGridContainerDown\"]/div/div[4]/div/div/div[3]/div[1]/div/button/div")).click();
             Thread.sleep(2000);
-
             Assert.assertEquals(driver.getCurrentUrl(), "http://127.0.0.1:8000/view/packingsalesorder");
     }
 }
